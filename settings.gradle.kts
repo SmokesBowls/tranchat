@@ -1,21 +1,20 @@
 pluginManagement {
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
+        maven { url = uri("https://maven.google.com/") }
+        maven("https://jetbrains.bintray.com/compose")
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
+        maven { url = uri("https://maven.google.com/") }
         mavenCentral()
+        maven("https://jetbrains.bintray.com/compose")
     }
 }
 
