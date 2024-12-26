@@ -1,0 +1,55 @@
+sealed class ChatError {
+    data class ConnectionError(val message: String, val cause: Throwable? = null) : ChatError()
+    data class MessageError(val message: String, val messageId: String? = null) : ChatError()
+    data class DatabaseError(val message: String, val operation: String) : ChatError()
+    data object NetworkUnavailable : ChatError()
+}
+
+class ChatErrorHandler {
+    fun handleError(error: ChatError) {
+        when (error) {
+            is ChatError.ConnectionError -> handleConnectionError(error)
+            is ChatError.MessageError -> handleMessageError(error)
+            is ChatError.DatabaseError -> handleDatabaseError(error)
+            ChatError.NetworkUnavailable -> handleNetworkError()
+        }
+    }
+
+    private fun handleConnectionError(error: ChatError.ConnectionError) {
+        Log.e(TAG, "Connection error: ${error.message}", error.cause)
+        tryReconnect()
+    }
+
+    private fun handleMessageError(error: ChatError.MessageError) {
+        Log.e(TAG, "Message error: ${error.message}")
+        error.messageId?.let { messageId ->
+            queueMessageForRetry(messageId)
+        }
+    }
+
+    private fun handleDatabaseError(error: ChatError.DatabaseError) {
+        Log.e(TAG, "Database error during ${error.operation}: ${error.message}")
+        // Implement fallback storage
+    }
+
+    private fun handleNetworkError() {
+        Log.e(TAG, "Network unavailable")
+        enableOfflineMode()
+    }
+
+    private fun tryReconnect() {
+        // Reconnection logic
+    }
+
+    private fun queueMessageForRetry(messageId: String) {
+        // Message retry logic
+    }
+
+    private fun enableOfflineMode() {
+        // Offline mode logic
+    }
+
+    companion object {
+        private const val TAG = "ChatErrorHandler"
+    }
+}
