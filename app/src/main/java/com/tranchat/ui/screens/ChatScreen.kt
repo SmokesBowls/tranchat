@@ -76,7 +76,20 @@ private fun MessageInput(
             value = text,
             onValueChange = { text = it },
             modifier = Modifier.weight(1f),
-            enabled = isConnected
+            enabled = isConnected,
+            placeholder = { Text("Type a message...") },
+            keyboardOptions = androidx.compose.foundation.text.KeyboardOptions(
+                imeAction = androidx.compose.ui.text.input.ImeAction.Send
+            ),
+            keyboardActions = androidx.compose.foundation.text.KeyboardActions(
+                onSend = {
+                    if (text.isNotBlank()) {
+                        onMessageSent(text)
+                        text = ""
+                    }
+                }
+            ),
+            singleLine = true
         )
         
         Button(
