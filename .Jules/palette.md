@@ -1,0 +1,3 @@
+## 2024-05-24 - Icon-Only Button Accessibility Pattern
+**Learning:** In this application, multiple icon-only buttons (like the Go back arrow and Exit room 'X') were implemented using inline SVGs without `aria-label`, `title`, or proper keyboard focus states (`focus-visible`). This makes them completely invisible to screen readers and difficult to navigate for keyboard users.
+**Action:** Always check interactive elements containing only SVGs/icons to ensure they have an `aria-label` describing the action, an `aria-hidden="true"` on the SVG itself to hide the decorative element, and `focus:outline-none focus-visible:ring-2` (using Tailwind) to ensure visible keyboard navigation.
