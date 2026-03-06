@@ -1,0 +1,3 @@
+## 2024-05-18 - Missing Accessibility on Icon-Only Buttons
+**Learning:** Found a recurring pattern across React components (`JoinRoom.jsx`, `SetPassword.jsx`, `Room.jsx`) where icon-only buttons lacked essential accessibility attributes (aria-labels, visible focus states, and aria-hidden on decorative SVGs), causing screen reader and keyboard navigation issues.
+**Action:** Always verify that interactive elements lacking visible text include descriptive `aria-label` attributes and explicit keyboard focus visibility (e.g., using Tailwind's `focus-visible:ring-2 focus:outline-none`). Inner decorative SVGs should explicitly declare `aria-hidden="true"`.
