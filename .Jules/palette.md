@@ -1,0 +1,3 @@
+## 2025-03-06 - Accessible Icon-only Buttons
+**Learning:** Found an accessibility issue pattern where icon-only buttons in the application lack text labels, making them inaccessible to screen readers and difficult to understand without hover tooltips. Also, purely decorative interior elements (like SVGs) need to be hidden from accessibility trees.
+**Action:** When adding or updating icon-only buttons, always include `aria-label` for screen readers, `title` for visual tooltips, `focus-visible:ring-2 focus:outline-none` for keyboard focus visibility, and `aria-hidden="true"` on the interior `<svg>` elements.
