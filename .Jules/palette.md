@@ -1,0 +1,3 @@
+## 2024-05-24 - Icon-only Button Accessibility
+**Learning:** In this project, there's a pattern of using SVG-only icon buttons (e.g., Back buttons, Exit buttons). These are often completely inaccessible to screen readers and keyboard users as they lack `aria-label`, `title`, and visible focus rings (`focus-visible:ring-2`), while their inner SVGs lack `aria-hidden="true"`.
+**Action:** When adding or reviewing new icon-only buttons, always ensure they have `aria-label`, `title` (for tooltip hover), and proper focus styling (e.g., `focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 rounded-full p-1`) so they are fully usable by all users. Hide the decorative SVG from screen readers.
