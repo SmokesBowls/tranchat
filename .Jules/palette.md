@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility properties for icon-only buttons
+**Learning:** Found multiple icon-only buttons (`Room.jsx`, `JoinRoom.jsx`, `SetPassword.jsx`) that lack `aria-label`, `title`, and keyboard focus styling, and the inner SVGs lack `aria-hidden="true"`.
+**Action:** When working on UI components, ensure that all icon-only buttons have an `aria-label` attribute, a `title` tooltip, an `aria-hidden="true"` on the SVG inside to prevent screen readers from reading the SVG code, and proper `focus-visible` styling (e.g. `focus-visible:ring-2 focus:outline-none focus-visible:ring-blue-500` for standard buttons, or `focus-visible:ring-white` for dark overlays).
