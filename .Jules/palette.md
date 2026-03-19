@@ -1,0 +1,3 @@
+## 2024-05-20 - Icon-Only Button Accessibility Pattern
+**Learning:** Icon-only navigation and exit buttons across the app (`JoinRoom`, `SetPassword`, `Room`) lacked semantic labeling and explicit focus states, making them invisible to screen readers and difficult to navigate via keyboard. Decorative inner SVGs were also being announced.
+**Action:** Establish a standard pattern for all icon-only buttons: add `aria-label`, `title`, and explicit `focus-visible` Tailwind classes (e.g., `focus-visible:ring-2 focus-visible:ring-blue-500` or `focus-visible:ring-white` for dark backgrounds) while masking the inner SVG with `aria-hidden="true"`.
