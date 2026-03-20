@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility and Focus for Icon-Only Buttons
+**Learning:** React components often implement icon-only buttons (like back/exit arrows) lacking descriptive ARIA labels, making them invisible to screen readers. Further, these buttons tend to miss visible focus styles, violating keyboard accessibility guidelines. For dark overlays, `focus-visible:ring-white` ensures sufficient contrast.
+**Action:** Audit all icon-only buttons to ensure they have an `aria-label` and `title`, their inner `<svg>` elements have `aria-hidden="true"`, and they feature explicit keyboard focus styles using Tailwind utilities like `focus:outline-none focus-visible:ring-2`. Adjust ring colors to ensure proper contrast against background overlays.
