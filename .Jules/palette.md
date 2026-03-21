@@ -1,0 +1,3 @@
+## 2024-03-20 - Accessible Icon-Only Buttons on Dark Overlays
+**Learning:** For keyboard accessibility, focus rings need to contrast with their backgrounds. In standard forms (like `JoinRoom.jsx`), `focus-visible:ring-blue-500` matches the app's style. However, for icon-only buttons placed over dark overlays (like the exit button in `Room.jsx`), standard blue or default browser rings can become invisible.
+**Action:** When adding accessibility to interactive elements on dark/transparent-black backgrounds, switch the focus ring to `focus-visible:ring-white` to ensure keyboard navigation remains visibly distinct.
