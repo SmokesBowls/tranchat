@@ -1,0 +1,3 @@
+## 2024-05-18 - Accessibility for Icon-Only Buttons
+**Learning:** Icon-only buttons often lack accessible names for screen readers, and inner SVGs can be announced incorrectly if not hidden. Furthermore, they need explicit visual focus indicators so keyboard users can navigate effectively. In Tailwind React, standard components use `focus-visible:ring-blue-500`, while components on dark overlays use `focus-visible:ring-white`.
+**Action:** Always add `aria-label` or `title` to icon-only buttons, set `aria-hidden="true"` on their child SVGs, and use `focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500` (or `ring-white` for dark overlays) to guarantee keyboard accessibility and screen reader friendliness.
