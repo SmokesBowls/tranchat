@@ -1,0 +1,3 @@
+## 2025-01-20 - Ensure icon-only buttons have aria-labels and focus rings
+**Learning:** Found a critical accessibility gap where top-left "back" navigation buttons used an SVG icon without an `aria-label`, leaving screen reader users without context. Furthermore, they lacked `focus-visible` styling, making keyboard navigation invisible.
+**Action:** Always add `aria-label` and `title` to icon-only navigation buttons. Use Tailwind's `focus:outline-none focus-visible:ring-2` to match the application's standard focus rings (e.g., `focus-visible:ring-blue-500 rounded`) and explicitly set `aria-hidden="true"` on the purely decorative inner SVG to prevent confusing screen reader output.
