@@ -1,0 +1,3 @@
+## 2024-04-09 - Focus Visible Rings with Tailwind v4
+**Learning:** Tailwind v4 (in temporary Vite verification environments) combined with React Router DOM can easily inject proper keyboard focus indicators on components, but standard elements like buttons default to outlines. Explicit `focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500` is necessary, and for dark overlays, `focus-visible:ring-white` ensures proper contrast.
+**Action:** Always verify keyboard accessibility on icon-only buttons via Playwright `page.keyboard.press("Tab")` to ensure focus rings are visible on both light and dark backgrounds.
