@@ -1,0 +1,3 @@
+## 2024-04-11 - Icon Button Accessibility
+**Learning:** Icon-only buttons using nested SVGs need comprehensive accessibility metadata for both mouse and keyboard users: `aria-label` for screen readers, `title` for mouse hover tooltips, `focus-visible` outline for keyboard navigation tracking, and `aria-hidden="true"` on the SVG to prevent redundant screen reader announcements.
+**Action:** Always add the full suite of accessibility attributes (`aria-label`, `title`, `focus-visible:ring-...`, `focus:outline-none`, and `aria-hidden="true"` on inner `<svg>`) when creating or modifying icon-only `<button>` elements.
