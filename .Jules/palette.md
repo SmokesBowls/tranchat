@@ -1,0 +1,3 @@
+## 2024-05-24 - Contextual Focus Rings for Icon-Only Buttons
+**Learning:** This application features icon-only buttons overlaying varied backgrounds (e.g., light modal forms, dark P2P video chat layers). Standard focus indicators (`ring-blue-500`) have poor contrast on dark overlays, violating accessibility visibility standards.
+**Action:** Implemented a standardized pattern for contextual focus rings: use `focus-visible:ring-2 focus-visible:ring-blue-500` for standard light-background buttons, and `focus-visible:ring-white` for buttons on dark overlays (like the video exit button). Always paired with `focus:outline-none` to prevent default browser double-rings, explicit `aria-label`s, and `aria-hidden="true"` on inner SVGs.
