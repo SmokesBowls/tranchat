@@ -1,0 +1,3 @@
+## 2024-05-24 - Icon-Only Button Accessibility and Contextual Focus Rings
+**Learning:** Found a pattern of icon-only buttons (like the back button in SetPassword/JoinRoom and the exit button in Room) lacking `aria-label`s and `aria-hidden` on their SVGs, making them inaccessible to screen readers. Furthermore, keyboard focus indicators must contrast with their backgrounds: standard components on light backgrounds should use `focus-visible:ring-blue-500` to match the app style, while buttons on dark overlays need a different color (like `focus-visible:ring-white`) to be visible.
+**Action:** Always add `aria-label` to icon-only buttons, `aria-hidden="true"` to inner SVGs, and use context-appropriate `focus-visible` ring colors for keyboard accessibility.
