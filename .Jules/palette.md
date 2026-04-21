@@ -1,0 +1,3 @@
+## 2024-04-21 - [Accessibility] Improve icon-only navigation buttons
+**Learning:** This application lacks centralized UI components for buttons (like a standard `IconButton`). This led to accessibility oversights, specifically on SVG-only back/exit buttons (missing `aria-label`, visible focus rings, and screen-reader hiding for the SVG itself).
+**Action:** When working on generic components like `Room.jsx` or `JoinRoom.jsx`, actively watch out for raw `<button><svg>...</svg></button>` patterns and immediately apply `aria-label`, `title`, explicit `focus-visible:ring-2`, and `aria-hidden="true"` to the inner SVG.
