@@ -1,0 +1,3 @@
+## 2025-02-12 - Explicit focus indicators on interactive icons
+**Learning:** Icon-only buttons used for critical actions (like "Go back" and "Exit room") must have explicitly defined focus rings via Tailwind (e.g., `focus-visible:ring-2`) and require an underlying `aria-label` along with `aria-hidden="true"` on the SVG to support both keyboard and screen-reader accessibility.
+**Action:** When adding or modifying interactive icons anywhere in the application, enforce `focus-visible` styles with a color matching the contrast needs (e.g., `ring-white` for dark backgrounds, `ring-blue-500` for light).
