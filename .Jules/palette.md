@@ -1,0 +1,3 @@
+## 2023-10-27 - Icon-only buttons accessibility pattern
+**Learning:** Found multiple instances of icon-only back/exit buttons in `JoinRoom`, `SetPassword`, and `Room` components that lacked ARIA labels, tooltips, and explicit keyboard focus states. The application relies on dark overlays in some places (like `Room.jsx`), requiring different focus ring colors (`ring-white` instead of `ring-blue-500`) for visibility.
+**Action:** Always ensure icon-only `<button>` elements have `aria-label`, `title`, and `focus-visible:ring-2` with appropriate contrast colors, and that inner purely visual `<svg>` elements have `aria-hidden="true"`.
