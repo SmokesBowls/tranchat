@@ -1,0 +1,3 @@
+## 2023-10-27 - Icon-Only Button Accessibility Pattern
+**Learning:** In the React codebase, several components (like `Room`, `JoinRoom`, `SetPassword`) use icon-only buttons for navigation (e.g., Back, Exit) positioned absolutely. These lacked accessibility context and keyboard focus visibility, particularly over dark backgrounds in `Room.jsx`.
+**Action:** Always apply `aria-label`, `title`, and `aria-hidden="true"` on the inner SVG for icon-only buttons. For `focus-visible` styling, standard buttons can use `focus-visible:ring-blue-500`, but buttons overlaid on dark backgrounds (like the `Room` video placeholder) require contrasting colors like `focus-visible:ring-white` to ensure the focus ring remains visible.
