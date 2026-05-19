@@ -1,0 +1,3 @@
+## 2024-05-19 - Accessible Focus Rings on Overlay vs Standard Backgrounds
+**Learning:** For keyboard accessibility focus rings in the React frontend, standard components use Tailwind's `focus-visible:ring-blue-500` to match the application's style. However, components on dark overlays (like the video chat room overlay) require `focus-visible:ring-white` since default colored rings often disappear entirely against `bg-black bg-opacity-50`.
+**Action:** When adding focus rings to components over dark or semi-transparent backgrounds, always use high-contrast white rings instead of standard blue rings.
