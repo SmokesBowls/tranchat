@@ -1,0 +1,3 @@
+## 2024-06-11 - Icon Button Accessibility
+**Learning:** Icon-only buttons (like SVG back arrows or close icons) in this project often lack accessible names, causing screen readers to read generic or confusing text. Furthermore, they often lack explicit keyboard focus styles, making keyboard navigation difficult to track visually.
+**Action:** Always add an explicit `aria-label` to the parent `<button>` element describing its action. Add `aria-hidden="true"` to the child `<svg>` element to prevent redundant announcements. Add explicit focus rings using Tailwind's `focus-visible` classes (e.g., `focus-visible:ring-2 focus-visible:ring-blue-500`) to improve keyboard navigation visibility.
