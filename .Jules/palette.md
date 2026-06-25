@@ -1,0 +1,3 @@
+## 2024-05-24 - Accessibility for Icon-only Buttons
+**Learning:** Icon-only buttons (like back and exit buttons) lack programmatic context for screen readers and require `aria-label`s on the `<button>` and `aria-hidden="true"` on the interior `<svg>` to be properly interpreted. In addition, when implementing keyboard focus indicators for these floating buttons (e.g. over dark overlays vs white cards), different Tailwind ring colors (`ring-white` vs `ring-blue-500`) are necessary to ensure the focus ring remains visible against the component's background.
+**Action:** Always add semantic `aria-label`s and `aria-hidden="true"` to icon SVGs for icon-only interactive elements. Use contrasting focus rings relative to the background context.
